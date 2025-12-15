@@ -21,21 +21,24 @@ shifted to the users.
 Fixes overlayfs driver for docker.
 
 [1]: https://source.android.com/docs/core/storage/sdcardfs-deprecate
-[2]: https://android.googlesource.com/platform/system/vold/+/5b711b10dbbec26cd8157672f12566b525d0d2bb/model/PrivateVolume.cpp#170
-[3]: https://android.googlesource.com/platform/system/vold/+/5b711b10dbbec26cd8157672f12566b525d0d2bb/model/PrivateVolume.cpp#178
+[2]:
+https://android.googlesource.com/platform/system/vold/+/5b711b10dbbec26cd8157672f12566b525d0d2bb/model/PrivateVolume.cpp#170
+[3]:
+https://android.googlesource.com/platform/system/vold/+/5b711b10dbbec26cd8157672f12566b525d0d2bb/model/PrivateVolume.cpp#178
 
 Change-Id: Ia3a4a81e6772796b3400fd13b89c6f3677e35872
 ---
  fs/overlayfs/util.c | 4 +---
  1 file changed, 1 insertion(+), 3 deletions(-)
 
+$ git diff fs/overlayfs/util.c
 diff --git a/fs/overlayfs/util.c b/fs/overlayfs/util.c
-index 7eba49db7dd6..d3bb09b272cc 100644
+index 36116cd15..be775f5c4 100644
 --- a/fs/overlayfs/util.c
 +++ b/fs/overlayfs/util.c
-@@ -140,9 +140,7 @@ void ovl_dentry_init_flags(struct dentry *dentry, struct dentry *upperdentry,
- bool ovl_dentry_weird(struct dentry *dentry)
- {
+@@ -143,9 +143,7 @@ bool ovl_dentry_weird(struct dentry *dentry)
+ 		return true;
+ 
  	return dentry->d_flags & (DCACHE_NEED_AUTOMOUNT |
 -				  DCACHE_MANAGE_TRANSIT |
 -				  DCACHE_OP_HASH |
